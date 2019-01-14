@@ -1107,8 +1107,7 @@ public class VectorRoomActivity extends MXCActionBarActivity implements
         mActiveWidgetsBanner.onActivityPause();
 
         // to have notifications for this room
-        ViewedRoomTracker.getInstance().setViewedRoomId(null);
-        ViewedRoomTracker.getInstance().setMatrixId(null);
+        VectorApp.getInstance().getNotificationDrawerManager().setCurrentRoom(null);
     }
 
     @Override
@@ -1142,7 +1141,7 @@ public class VectorRoomActivity extends MXCActionBarActivity implements
 
             // to do not trigger notifications for this room
             // because it is displayed.
-            ViewedRoomTracker.getInstance().setViewedRoomId(mRoom.getRoomId());
+            VectorApp.getInstance().getNotificationDrawerManager().setCurrentRoom(mRoom.getRoomId());
 
             // listen for room name or topic changes
             mRoom.addEventListener(mRoomEventListener);
