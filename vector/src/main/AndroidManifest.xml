@@ -480,6 +480,12 @@
 
         <receiver android:name=".receiver.DismissNotificationReceiver" />
 
+        <!-- Exported false, should only be accessible from this app!! -->
+        <receiver
+            android:name=".receiver.ReplyNotificationBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false" />
+        
         <receiver
             android:name=".receiver.VectorReferrerReceiver"
             android:enabled="true"
