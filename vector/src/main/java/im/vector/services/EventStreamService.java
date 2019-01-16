@@ -1238,6 +1238,7 @@ public class EventStreamService extends Service {
      * @param senderDisplayName   the sender display name
      * @param unreadMessagesCount the unread messages count
      */
+    @Deprecated
     public static void onStaticNotifiedEvent(Context context,
                                              @Nullable Event event,
                                              String roomName,

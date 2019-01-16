@@ -485,7 +485,7 @@
             android:name=".receiver.ReplyNotificationBroadcastReceiver"
             android:enabled="true"
             android:exported="false" />
-        
+
         <receiver
             android:name=".receiver.VectorReferrerReceiver"
             android:enabled="true"
