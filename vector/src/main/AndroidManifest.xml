@@ -478,8 +478,6 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".receiver.DismissNotificationReceiver" />
-
         <!-- Exported false, should only be accessible from this app!! -->
         <receiver
             android:name=".receiver.ReplyNotificationBroadcastReceiver"
