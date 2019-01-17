@@ -31,7 +31,6 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationManagerCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -64,7 +63,6 @@ import java.util.Set;
 import im.vector.Matrix;
 import im.vector.R;
 import im.vector.VectorApp;
-import im.vector.ViewedRoomTracker;
 import im.vector.notifications.NotifiableEvent;
 import im.vector.notifications.NotifiableEventResolver;
 import im.vector.notifications.NotificationUtils;
@@ -251,7 +249,7 @@ public class EventStreamService extends Service {
             NotifiableEvent notifiableEvent = mNotifiableEventResolver.resolveEvent(event, roomState, bingRule, session);
             if (notifiableEvent != null) {
                 String userDisplayName = (session.getMyUser() != null) ? session.getMyUser().displayname : "";
-                VectorApp.getInstance().getNotificationDrawerManager().onNotifiableEventReceived(notifiableEvent, session.getMyUserId() ,session.getMyUser().displayname);
+                VectorApp.getInstance().getNotificationDrawerManager().onNotifiableEventReceived(notifiableEvent, session.getMyUserId(), userDisplayName);
             }
 
             //prepareNotification(event, bingRule);
@@ -1112,7 +1110,7 @@ public class EventStreamService extends Service {
     public static void onMessagesNotificationDismiss(String accountId) {
         Log.d(LOG_TAG, "onMessagesNotificationDismiss " + accountId);
         if (null != mActiveEventStreamService) {
-          //  mActiveEventStreamService.refreshMessagesNotification();
+            //  mActiveEventStreamService.refreshMessagesNotification();
         }
     }
 
@@ -1126,7 +1124,7 @@ public class EventStreamService extends Service {
     public static void cancelNotificationsForRoomId(String accountId, String roomId) {
         Log.d(LOG_TAG, "cancelNotificationsForRoomId " + accountId + " - " + roomId);
         if (null != mActiveEventStreamService) {
-           // mActiveEventStreamService.cancelNotifications(roomId);
+            // mActiveEventStreamService.cancelNotifications(roomId);
         }
     }
 
@@ -1307,6 +1305,7 @@ public class EventStreamService extends Service {
      * @param messages the messages list, null will hide the messages notification.
      * @param rule     the bing rule to use
      */
+    @Deprecated
     private static void displayMessagesNotificationStatic(Context context, List<CharSequence> messages, BingRule rule) {
         if (!Matrix.getInstance(context).getPushManager().areDeviceNotificationsAllowed()
                 || null == messages
