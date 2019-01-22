@@ -171,7 +171,7 @@ public class Matrix {
             mRefreshUnreadCounter = false;
 
             Log.d(LOG_TAG, "onLiveEventsChunkProcessed ");
-            EventStreamService.checkDisplayedNotifications();
+            //EventStreamService.checkDisplayedNotifications();
         }
     };
 
