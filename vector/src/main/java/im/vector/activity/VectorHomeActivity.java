@@ -687,7 +687,7 @@ public class VectorHomeActivity extends VectorAppCompatActivity implements Searc
                 return;
             }
 
-            if (!PreferencesManager.didAskUserToIgnoreBatteryOptimizations(this)) {
+            if (pushManager.isBackgroundSyncAllowed() && !PreferencesManager.didAskUserToIgnoreBatteryOptimizations(this)) {
                 PreferencesManager.setDidAskUserToIgnoreBatteryOptimizations(this);
 
                 if (!SystemUtilsKt.isIgnoringBatteryOptimizations(this)) {
