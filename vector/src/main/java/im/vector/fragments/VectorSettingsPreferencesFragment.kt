@@ -812,6 +812,15 @@ class VectorSettingsPreferencesFragment : PreferenceFragmentCompat(), SharedPref
 
             false
         }
+
+        findPreference(PreferencesManager.SETTINGS_SECURE_MESSAGE_RECOVERY_PREFERENCE_KEY)
+                .onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            context?.let {
+                startActivity(KeysBackupManageActivity.intent(it, mSession.myUserId))
+            }
+            false
+        }
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -2517,7 +2526,7 @@ class VectorSettingsPreferencesFragment : PreferenceFragmentCompat(), SharedPref
                             }
                             else -> {
                                 exportButton.isEnabled = false
-                                passPhrase2EditText.error = getString(R.string.encryption_export_passphrase_dont_match)
+                                passPhrase2EditText.error = getString(R.string.passphrase_passphrase_does_not_match)
                             }
                         }
                     }
@@ -2607,8 +2616,6 @@ class VectorSettingsPreferencesFragment : PreferenceFragmentCompat(), SharedPref
 
                 }
             })
-
-            importButton.isEnabled = false
 
             val importDialog = builder.show()
             val appContext = thisActivity.applicationContext

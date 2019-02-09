@@ -214,7 +214,7 @@
     <string name="incoming_call">Thirrje Ardhëse</string>
     <string name="incoming_video_call">Thirrje Video Ardhëse</string>
     <string name="incoming_voice_call">Thirrje Audio Ardhëse</string>
-    <string name="call_in_progress">Thirrje Në Kryerje e Sipër</string>
+    <string name="call_in_progress">Thirrje Në Kryerje e Sipër…</string>
 
     <string name="call_error_camera_init_failed">S’gatitet dot kamera</string>
     <string name="call_error_answered_elsewhere">thirrje e përgjigjur gjetkë</string>
@@ -589,14 +589,14 @@
     <string name="encryption_export_room_keys">Eksporto kyçe dhome</string>
     <string name="encryption_export_room_keys_summary">Eksportojini kyçet te një kartelë vendore</string>
     <string name="encryption_export_export">Eksporto</string>
-    <string name="encryption_export_create_passphrase">Krijoni frazëkalim</string>
-    <string name="encryption_export_confirm_passphrase">Ripohoni frazëkalimin</string>
-    <string name="encryption_export_passphrase_dont_match">Frazëkalimet duhet të përputhen</string>
+    <string name="passphrase_create_passphrase">Krijoni frazëkalim</string>
+    <string name="passphrase_confirm_passphrase">Ripohoni frazëkalimin</string>
+    <string name="passphrase_passphrase_does_not_match">Frazëkalimet duhet të përputhen</string>
     <string name="encryption_import_e2e_room_keys">Importo kyçe dhome E2E</string>
     <string name="encryption_import_room_keys">Importo kyçe dhome</string>
     <string name="encryption_import_room_keys_summary">Importo kyçe nga një kartelë vendore</string>
     <string name="encryption_import_import">Importo</string>
-    <string name="encryption_import_enter_passphrase">Jepni frazëkalimin</string>
+    <string name="passphrase_enter_passphrase">Jepni frazëkalimin</string>
     <string name="encryption_never_send_to_unverified_devices_title">Fshehtëzoje vetëm për pajisje të verifikuara</string>
     <string name="encryption_information_not_verified">JO i verifikuar</string>
     <string name="encryption_information_verified">I verifikuar</string>
@@ -633,7 +633,7 @@
     <string name="event_formatter_widget_added">%1$s u shtua nga %2$s</string>
     <string name="event_formatter_widget_removed">%1$s u hoq nga %2$s</string>
     <string name="settings_labs_create_conference_with_jitsi">Krijoni thirrje konferencë me Jitsi-n</string>
-    <string name="widget_delete_message_confirmation">Jeni i sigurt se doni të fshihet widget-i?</string>
+    <string name="widget_delete_message_confirmation">Jeni i sigurt se doni të fshihet widget-i nga kjo dhomë?</string>
     <string name="widget_integration_unable_to_create">S’arrihet të krijohet widget-i.</string>
     <string name="widget_integration_failed_to_send_request">S’u arrit të dërgohej kërkesë.</string>
     <string name="widget_integration_positive_power_level">Shkalla e pushtetit duhet të jetë një numër i plotë pozitiv.</string>
@@ -741,7 +741,7 @@
     <string name="no_contact_access_placeholder">S’e lejuat Riot-i të hyjë në kontaktet tuaja vendore</string>
     <string name="send_bug_report_description">Ju lutemi, përshkruajeni të metën. Ç’po bënit? Ç’prisnit të ndodhte? Ç’ndodhi në fakt?</string>
     <string name="send_bug_report_alert_message">Duket se po përplasni telefonin nga inati. Do të donit të hapej skena për njoftim të metash?</string>
-    <string name="send_bug_report_app_crashed">Herën e fundit aplikacioni u vithis. Do të donit të parashtroni një raport vithisje?</string>
+    <string name="send_bug_report_app_crashed">Herën e fundit aplikacioni u vithis. Do të donit të hapej skena e raportimit të vithisjeve?</string>
     <string name="send_bug_report_failed">Dështoi dërgimi i njoftimit të të metës (%s)</string>
     <string name="login">Hyni</string>
     <string name="logout">Dilni</string>
@@ -785,7 +785,6 @@ Mesazhet e fshehtëzuar s’do të jenë të dukshëm në klientë që nuk send�
     <string name="malformed_id">ID e keqformuar. Duhet të jetë një adresë email ose ID Matrix, si \'@localpart:domain\'</string>
     <string name="room_settings_de_prioritize">Hiqi përparësinë</string>
     <string name="settings_notification_privacy">Privatësi njoftimesh</string>
-    <string name="settings_notification_privacy_low_detail">Njoftime me pak hollësi</string>
     <string name="settings_olm_version">version olm</string>
     <string name="settings_pin_missed_notifications">Fikso dhomat me njoftime të humbura</string>
 
@@ -990,9 +989,7 @@ Na ndjeni për belanë.</string>
 
     <string name="settings_app_info_link_summary">Shfaq te rregullimet e sistemit të dhëna të aplikacionit.</string>
 
-    <string name="settings_notification_privacy_warning">Riot.im xhiron në prapaskenë për ta mbajtur private lëndën e mesazheve të njoftimeve tuaja. Për të ulur harxhimin e baterisë, mund të ndryshoni këtë mundësi.</string>
     <string name="settings_notification_privacy_need_permission">Aplikacioni lyp leje për xhirim në prapaskenë</string>
-    <string name="settings_notification_privacy_no_permission">Aplikacionet <b>nuk</b> lypin leje për të xhiruar në prapaskenë</string>
     <string name="settings_notification_privacy_fcm">• Njoftimet dërgohen përmes Google Cloud Messaging</string>
     <string name="settings_notification_privacy_metadata">• Njoftimet përmbajnë vetëm tejtëdhëna</string>
     <string name="settings_notification_privacy_secure_message_content">• Lënda e mesazhit të njoftimit <b>gjendet e siguruar drejt e nga shërbyesi home Matrix</b></string>
@@ -1165,4 +1162,9 @@ Për zhvilluesit:
 
 Zbuloni bashkëpunimin vërtet efikas dhe të hapur, me Riot.im!</string>
 
+    <string name="video_call_in_progress">Thirrje Video Në Kryerje e Sipër…</string>
+
+    <string name="store_whats_new">Bëjmë përherë ndryshime dhe përmirësime te Riot.im.
+Regjistri i plotë i ndryshimeve mund të gjendet këtu: %1$s.
+Që të garantoni se s’ju shpëton gjë, thjesht mbajeni të aktivizuar mekanizmin e përditësimeve.</string>
 </resources>

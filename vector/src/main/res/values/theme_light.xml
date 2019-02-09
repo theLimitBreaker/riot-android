@@ -13,6 +13,9 @@
         <!-- Default color for text View -->
         <item name="android:textColorTertiary">@color/riot_tertiary_text_color_light</item>
 
+        <!-- Menu text color -->
+        <item name="android:actionMenuTextColor">#FFFFFFFF</item>
+
         <!-- default background color -->
         <item name="android:colorBackground">@color/riot_primary_background_color_light</item>
 
@@ -20,7 +23,8 @@
         <item name="vctr_waiting_background_color">#AAAAAAAA</item>
 
         <!-- application bar text color -->
-        <item name="vctr_primary_text_color">@android:color/white</item>
+        <item name="vctr_toolbar_primary_text_color">#FFFFFFFF</item>
+        <item name="vctr_toolbar_secondary_text_color">#FFD8D8D8</item>
 
         <!-- application bar text hint color -->
         <item name="vctr_primary_hint_text_color">@color/primary_hint_text_color_light</item>
@@ -33,17 +37,16 @@
 
         <!-- room message colors -->
         <item name="vctr_unread_room_indent_color">#FF2E3648</item>
-        <item name="vctr_unsent_message_text_color">#FFFF4444</item>
+        <item name="vctr_unsent_message_text_color">@color/vector_fuchsia_color</item>
         <item name="vctr_message_text_color">?android:attr/textColorPrimary</item>
         <item name="vctr_notice_text_color">#903C3C3C</item>
-        <item name="vctr_encrypting_message_text_color">@color/primary_color_light</item>
-        <item name="vctr_sending_message_text_color">#AAA</item>
+        <item name="vctr_encrypting_message_text_color">?android:colorAccent</item>
+        <item name="vctr_sending_message_text_color">?android:textColorSecondary</item>
         <item name="vctr_highlighted_message_text_color">@color/vector_fuchsia_color</item>
         <item name="vctr_highlighted_searched_message_text_color">@color/primary_color_light</item>
         <item name="vctr_search_mode_room_name_text_color">#333C3C3C</item>
-        <item name="vctr_unread_marker_line_color">@color/primary_color_light</item>
+        <item name="vctr_unread_marker_line_color">?android:colorAccent</item>
         <item name="vctr_markdown_block_background_color">#FFEEEEEE</item>
-        <item name="vctr_fenced_code_block_background_color">#FF00FF00</item>
         <item name="vctr_room_activity_divider_color">#FFF2F2F2</item>
 
         <!-- tab bar colors -->
@@ -59,6 +62,8 @@
         <item name="vctr_list_header_background_color">#FFF1F5F8</item>
         <item name="vctr_list_header_primary_text_color">#FF727A8B</item>
         <item name="vctr_list_header_secondary_text_color">#FFC8C8CD</item>
+
+        <item name="vctr_list_divider_color">@color/list_divider_color_light</item>
 
         <!-- gradient on the home bottom -->
         <item name="vctr_activity_bottom_gradient_color">#80ffffff</item>
@@ -158,7 +163,7 @@
         <item name="vctr_message_text_color">?android:attr/textColorPrimary</item>
 
         <item name="android:background">@color/riot_primary_background_color_light</item>
-        <item name="android:textColor">?attr/vctr_primary_text_color</item>
+        <item name="android:textColor">@color/riot_tertiary_text_color_light</item>
         <item name="editTextColor">?android:attr/textColorPrimary</item>
         <item name="android:editTextColor">?android:attr/textColorPrimary</item>
     </style>

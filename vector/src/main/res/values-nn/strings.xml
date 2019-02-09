@@ -56,7 +56,7 @@
     <string name="missing_permissions_title_to_start_conf_call">Klarer ikkje å setja i gang samtala</string>
     <string name="device_information">Einingsinfo</string>
     <string name="room_no_conference_call_in_encrypted_rooms">Gruppesamtaler er ikkje støtta i krypterte rom</string>
-    <string name="send_anyway">Send Likevel</string>
+    <string name="send_anyway"></string>
     <string name="or">eller</string>
     <string name="invite">Byd inn</string>
     <string name="offline">Fråkopla</string>
@@ -515,13 +515,10 @@ Merk at denne handlinga vil starta æppen på nytt og kan taka litt tid.</string
     <string name="settings_app_info_link_title">Æppinfo</string>
 
     <string name="settings_notification_privacy">Varselpersonvern</string>
-    <string name="settings_notification_privacy_warning">Riot.im køyrer i bakgrunnen for å halde varselinnhaldet ditt privat. Du kan forandra på denne innstillinga for å senka batteribruket.</string>
     <string name="settings_notification_privacy_normal">Vanleg</string>
     <string name="settings_notification_privacy_power_saving">Straumsparings-Innstillingar</string>
-    <string name="settings_notification_privacy_low_detail">Lågdetaljerte varsel</string>
     <string name="settings_notification_privacy_reduced">Minska personvern</string>
     <string name="settings_notification_privacy_need_permission">Æppen treng tilgang til å køyra i bakgrunnen</string>
-    <string name="settings_notification_privacy_no_permission">Æppen treng <b>ikkje</b> tillating til å køyra i bakgrunnen</string>
     <string name="settings_notification_privacy_fcm">• Varsel vert sende gjennom Google Cloud-Meldingar</string>
     <string name="settings_notification_privacy_metadata">• Varsel inneheld berre metadata</string>
     <string name="settings_notification_privacy_secure_message_content">• Meldingsinnhald i varselet <b>hentast trygt direkte frå Matrix-heimtenaren</b></string>
@@ -759,8 +756,8 @@ Krypterte meldingar vil ikkje vera synlege hjå klientar som førebels ikkje har
     <string name="encryption_export_room_keys">Hent romnyklar ut</string>
     <string name="encryption_export_room_keys_summary">Hent nyklane ut til ei lokal fil</string>
     <string name="encryption_export_export">Hent ut</string>
-    <string name="encryption_import_enter_passphrase">Skriv passetning inn</string>
-    <string name="encryption_export_confirm_passphrase">Stadfest passetninga</string>
+    <string name="passphrase_enter_passphrase">Skriv passetning inn</string>
+    <string name="passphrase_confirm_passphrase">Stadfest passetninga</string>
     <string name="encryption_export_saved_as">E2E-romnyklane vart lagra til \'%s\'
 
 Åtvaring: fila kan verta sletta vis æppen avinstallerast.</string>
@@ -995,5 +992,12 @@ Meldingssynlegheit på Matrix liknar på epost. At vi gløymer meldingane dine t
 
     <string name="resource_limit_soft_contact">Ver venleg og %s for å heva grensa.</string>
     <string name="resource_limit_hard_contact">Ver venleg og %s for å halda fram med å bruka tenesten.</string>
+
+    <string name="status_theme">Status.im Tema</string>
+
+    <string name="call_anyway" />
+    <string name="accept">Aksepter</string>
+
+    <string name="dialog_title_error">Feil</string>
 
 </resources>

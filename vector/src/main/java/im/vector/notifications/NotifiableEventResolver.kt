@@ -19,6 +19,7 @@ import android.content.Context
 import android.support.v4.app.NotificationCompat
 import android.util.Log
 import android.widget.ImageView
+import im.vector.BuildConfig
 import im.vector.R
 import im.vector.util.RiotEventDisplay
 import org.matrix.androidsdk.MXSession
@@ -42,7 +43,7 @@ class NotifiableEventResolver(val context: Context) {
         val store = session.dataHandler.store
         if (store == null) {
             Log.e(LOG_TAG, "## NotifiableEventResolver, unable to get store")
-            //TODO notifiy somehow that something did fail?
+            //TODO notify somehow that something did fail?
             return null
         }
 
@@ -90,15 +91,29 @@ class NotifiableEventResolver(val context: Context) {
 
         if (room == null) {
             Log.e(LOG_TAG, "## Unable to resolve room for eventId [${event.eventId}] and roomID [${event.roomId}]")
-            return null
+            // Ok room is not known in store, but we can still display something
+            val body = eventDisplay.getTextualDisplay(event, null)?.toString()
+                    ?: context.getString(R.string.notification_unknown_new_event)
+            val roomName = context.getString(R.string.notification_unknown_room_name)
+            val senderDisplayName = event.sender ?: ""
+
+            val notifiableEvent = NotifiableMessageEvent(
+                    eventId = event.eventId,
+                    timestamp = event.originServerTs,
+                    noisy = noisy,
+                    senderName = senderDisplayName,
+                    body = body,
+                    roomId = event.roomId,
+                    roomName = roomName)
+
+            notifiableEvent.matrixID = session.myUserId
+            notifiableEvent.soundName = soundName
+
+            return notifiableEvent
         } else {
 
-            if (room.isEventRead(event.eventId)) {
-                Log.e(LOG_TAG, "## Discard event because it has been already read on other platfom [${event.eventId}] and roomID [${event.roomId}]")
-                return null
-            }
-
-            val body = eventDisplay.getTextualDisplay(event, room.state)?.toString() ?: context.getString(R.string.notification_unknown_new_event)
+            val body = eventDisplay.getTextualDisplay(event, room.state)?.toString()
+                    ?: context.getString(R.string.notification_unknown_new_event)
             val roomName = room.getRoomDisplayName(context)
             val senderDisplayName = room.state.getMemberName(event.sender) ?: event.sender ?: ""
 
@@ -138,9 +153,10 @@ class NotifiableEventResolver(val context: Context) {
     }
 
     private fun resolveStateRoomEvent(event: Event, bingRule: BingRule?, session: MXSession, store: IMXStore): NotifiableEvent? {
-        if ("invite" == event.contentAsJsonObject?.getAsJsonPrimitive(RoomMember.MEMBERSHIP_INVITE)?.asString) {
+        if (RoomMember.MEMBERSHIP_INVITE == event.contentAsJsonObject?.getAsJsonPrimitive("membership")?.asString) {
             val room = store.getRoom(event.roomId /*roomID cannot be null (see Matrix SDK code)*/)
-            val body = eventDisplay.getTextualDisplay(event, room.state)?.toString() ?: context.getString(R.string.notification_new_invitation)
+            val body = eventDisplay.getTextualDisplay(event, room.state)?.toString()
+                    ?: context.getString(R.string.notification_new_invitation)
             return InviteNotifiableEvent(
                     session.myUserId,
                     eventId = event.eventId,
@@ -154,6 +170,9 @@ class NotifiableEventResolver(val context: Context) {
                     isPushGatewayEvent = false)
         } else {
             Log.e(LOG_TAG, "## unsupported notifiable event for eventId [${event.eventId}]")
+            if (BuildConfig.LOW_PRIVACY_LOG_ENABLE) {
+                Log.e(LOG_TAG, "## unsupported notifiable event for event [${event}]")
+            }
             //TODO generic handling?
         }
         return null

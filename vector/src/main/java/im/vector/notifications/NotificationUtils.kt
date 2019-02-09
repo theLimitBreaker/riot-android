@@ -28,16 +28,11 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
-import android.os.PowerManager
-import android.support.annotation.ColorInt
 import android.support.annotation.StringRes
 import android.support.v4.app.*
-import android.support.v4.content.ContextCompat
 import android.text.TextUtils
 import im.vector.BuildConfig
-import im.vector.Matrix
 import im.vector.R
-import im.vector.VectorApp
 import im.vector.activity.JoinRoomActivity
 import im.vector.activity.LockScreenActivity
 import im.vector.activity.VectorHomeActivity
@@ -61,12 +56,6 @@ object NotificationUtils {
     /* ==========================================================================================
      * IDs for notifications
      * ========================================================================================== */
-
-    /**
-     * Identifier of the notification used to display messages.
-     * Those messages are merged into a single notification.
-     */
-    private const val NOTIFICATION_ID_MESSAGES = 60
 
     /**
      * Identifier of the foreground notification used to keep the application alive
@@ -139,7 +128,6 @@ object NotificationUtils {
          * Default notification importance: shows everywhere, makes noise, but does not visually
          * intrude.
          */
-
         val noisyChannel = NotificationChannel(NOISY_NOTIFICATION_CHANNEL_ID,
                 context.getString(R.string.notification_noisy_notifications),
                 NotificationManager.IMPORTANCE_DEFAULT)
@@ -215,7 +203,11 @@ object NotificationUtils {
             // reflection at runtime, to avoid compiler error: "Cannot resolve method.."
             try {
                 val deprecatedMethod = notification.javaClass
-                        .getMethod("setLatestEventInfo", Context::class.java, CharSequence::class.java, CharSequence::class.java, PendingIntent::class.java)
+                        .getMethod("setLatestEventInfo",
+                                Context::class.java,
+                                CharSequence::class.java,
+                                CharSequence::class.java,
+                                PendingIntent::class.java)
                 deprecatedMethod.invoke(notification, context, context.getString(R.string.riot_app_name), context.getString(subTitleResId), pi)
             } catch (ex: Exception) {
                 Log.e(LOG_TAG, "## buildNotification(): Exception - setLatestEventInfo() Msg=" + ex.message, ex)
@@ -291,7 +283,8 @@ object NotificationUtils {
      * @return the call notification.
      */
     @SuppressLint("NewApi")
-    fun buildPendingCallNotification(context: Context, isVideo: Boolean, roomName: String, roomId: String, matrixId: String, callId: String): Notification {
+    fun buildPendingCallNotification(context: Context, isVideo: Boolean, roomName: String, roomId: String, matrixId: String, callId: String)
+            : Notification {
 
         val builder = NotificationCompat.Builder(context, CALL_NOTIFICATION_CHANNEL_ID)
                 .setWhen(System.currentTimeMillis())
@@ -359,7 +352,10 @@ object NotificationUtils {
                 .setContentText(context.getString(R.string.notification_new_messages))
 
                 // Number of new notifications for API <24 (M and below) devices.
-                .setSubText(context.resources.getQuantityString(R.plurals.room_new_messages_notification, messageSytle.messages.size, messageSytle.messages.size))
+                .setSubText(context
+                        .resources
+                        .getQuantityString(R.plurals.room_new_messages_notification, messageSytle.messages.size, messageSytle.messages.size)
+                )
 
                 // Auto-bundling is enabled for 4 or more notifications on API 24+ (N+)
                 // devices and all Wear devices. But we want a custom grouping, so we specify the groupID
@@ -392,7 +388,7 @@ object NotificationUtils {
 
                     if (!roomInfo.hasSmartReplyError) {
                         buildQuickReplyIntent(context, roomInfo.roomId, senderDisplayNameForReplyCompat)?.let { replyPendingIntent ->
-                            var remoteInput = RemoteInput.Builder(NotificationBroadcastReceiver.KEY_TEXT_REPLY)
+                            val remoteInput = RemoteInput.Builder(NotificationBroadcastReceiver.KEY_TEXT_REPLY)
                                     .setLabel(context.getString(R.string.action_quick_reply))
                                     .build()
                             NotificationCompat.Action.Builder(R.drawable.vector_notification_quick_reply,
@@ -426,10 +422,11 @@ object NotificationUtils {
 
         val accentColor = ThemeUtils.getColor(context, R.attr.colorAccent)
         // Build the pending intent for when the notification is clicked
-//        val openRoomIntent = buildOpenRoomIntent(context, roomInfo.roomId)
         val smallIcon = if (simpleNotifiableEvent.noisy) R.drawable.icon_notif_important else R.drawable.logo_transparent
 
-        val builder = NotificationCompat.Builder(context, if (simpleNotifiableEvent.noisy) NOISY_NOTIFICATION_CHANNEL_ID else SILENT_NOTIFICATION_CHANNEL_ID)
+
+        val channelID = if (simpleNotifiableEvent.noisy) NOISY_NOTIFICATION_CHANNEL_ID else SILENT_NOTIFICATION_CHANNEL_ID
+        val builder = NotificationCompat.Builder(context, channelID)
         builder.apply {
             setContentTitle(context.getString(R.string.riot_app_name))
             setContentText(simpleNotifiableEvent.description)
@@ -442,12 +439,13 @@ object NotificationUtils {
 
 
             if (simpleNotifiableEvent is InviteNotifiableEvent) {
-                val roomId = simpleNotifiableEvent.eventId
+                val roomId = simpleNotifiableEvent.roomId
                 // offer to type a quick reject button
                 val rejectIntent = JoinRoomActivity.getRejectRoomIntent(context, roomId, matrixId)
 
                 // the action must be unique else the parameters are ignored
                 rejectIntent.action = REJECT_ACTION
+                rejectIntent.data = Uri.parse("foobar://$roomId&$matrixId")
                 addAction(
                         R.drawable.vector_notification_reject_invitation,
                         context.getString(R.string.reject),
@@ -458,6 +456,7 @@ object NotificationUtils {
 
                 // the action must be unique else the parameters are ignored
                 joinIntent.action = JOIN_ACTION + System.currentTimeMillis().toInt()
+                joinIntent.data = Uri.parse("foobar://$roomId&$matrixId")
                 addAction(
                         R.drawable.vector_notification_accept_invitation,
                         context.getString(R.string.join),
@@ -488,16 +487,9 @@ object NotificationUtils {
                 priority = NotificationCompat.PRIORITY_LOW
             }
             setAutoCancel(true)
-//            val intent = Intent(context, ReplyNotificationBroadcastReceiver::class.java)
-//            intent.putExtra(ReplyNotificationBroadcastReceiver.KEY_ROOM_ID,roomInfo.roomId)
-//            intent.action = DISMISS_ROOM_NOTIF_ACTION
-//            val pendingIntent = PendingIntent.getBroadcast(context.applicationContext,
-//                    System.currentTimeMillis().toInt(), intent, PendingIntent.FLAG_UPDATE_CURRENT)
-//            setDeleteIntent(pendingIntent)
         }
         return builder.build()
     }
-
 
     private fun buildOpenRoomIntent(context: Context, roomId: String): PendingIntent? {
         val roomIntentTap = Intent(context, VectorRoomActivity::class.java)
@@ -588,40 +580,14 @@ object NotificationUtils {
         val intent = Intent(context, NotificationBroadcastReceiver::class.java)
         intent.action = DISMISS_SUMMARY_ACTION
         intent.data = Uri.parse("foobar://deleteSummary")
-        val pendingIntent = PendingIntent.getBroadcast(context.applicationContext,
+        return PendingIntent.getBroadcast(context.applicationContext,
                 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-        return pendingIntent
-    }
-
-    /**
-     * Show a notification containing messages
-     */
-    fun showNotificationMessage(context: Context, notification: Notification) {
-        with(NotificationManagerCompat.from(context)) {
-            notify(NOTIFICATION_ID_MESSAGES, notification)
-        }
     }
 
     fun showNotificationMessage(context: Context, tag: String?, id: Int, notification: Notification) {
         with(NotificationManagerCompat.from(context)) {
             notify(tag, id, notification)
         }
-    }
-
-
-//    fun showSummaryNotificationMessage(context: Context, tag: String, notification: Notification) {
-//        with(NotificationManagerCompat.from(context)) {
-//            notify(tag,NOTIFICATION_ID_ROOM_MESSAGES,notification)
-//        }
-//    }
-
-    /**
-     * Cancel the notification containing messages
-     */
-    @Deprecated("wip")
-    fun cancelNotificationMessage(context: Context) {
-        NotificationManagerCompat.from(context)
-                .cancel(NOTIFICATION_ID_MESSAGES)
     }
 
     fun cancelNotificationMessage(context: Context, tag: String?, id: Int) {

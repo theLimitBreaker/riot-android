@@ -109,7 +109,7 @@ Selezionare esporta per fare un backup delle chat prima di disconnettersi.</stri
     <string name="send_bug_report_placeholder">Descrivi qui il problema</string>
     <string name="send_bug_report_logs_description">Al fine di diagnosticare i problemi, i registri Riot di questo dispositivo saranno inviati con il rapporto dell\'errore. Questo rapporto, che include i registri e l\'istantanea grafica, non sarà pubblicamente visibile. Se preferisci inviare solo il testo soprastante, deseleziona:</string>
     <string name="send_bug_report_alert_message">Sembra che tu stia scuotendo il dispositivo con frustrazione. Desideri aprire la schermata di segnalazione errore?</string>
-    <string name="send_bug_report_app_crashed">L\'applicazione è crashata l\'ultima volta. Desideri inviare un rapporto del crash?</string>
+    <string name="send_bug_report_app_crashed">L\'applicazione è andata in crash l\'ultima volta. Desideri aprire la schermata di segnalazione del crash?</string>
 
     <string name="send_bug_report_sent">La segnalazione dell\'errore è stata spedita con successo</string>
     <string name="send_bug_report_failed">Fallito l\'invio della segnalazione di errore (%s)</string>
@@ -247,7 +247,7 @@ Ci scusiamo per l\'inconveniente.</string>
     <string name="incoming_call">Chiamata in arrivo</string>
     <string name="incoming_video_call">Videochiamata in arrivo</string>
     <string name="incoming_voice_call">Chiamata voce in arrivo</string>
-    <string name="call_in_progress">Chiamata in corso</string>
+    <string name="call_in_progress">Chiamata in corso…</string>
 
     <string name="call_error_user_not_responding">Ricezione fallita da parte del destinatario.</string>
     <string name="call_error_ice_failed">Fallita connessione al supporto multimediale</string>
@@ -671,8 +671,8 @@ I messaggi criptati non saranno visibili ai riceventi che non hanno ancora imple
     <string name="encryption_export_room_keys">Esporta le chiavi delle stanze</string>
     <string name="encryption_export_room_keys_summary">Esporta le chiavi in un file locale</string>
     <string name="encryption_export_export">Esporta</string>
-    <string name="encryption_import_enter_passphrase">Inserisci frase d\'accesso (passphrase)</string>
-    <string name="encryption_export_confirm_passphrase">Conferma frase d\'accesso (passphrase)</string>
+    <string name="passphrase_enter_passphrase">Inserisci frase d\'accesso (passphrase)</string>
+    <string name="passphrase_confirm_passphrase">Conferma frase d\'accesso (passphrase)</string>
     <string name="encryption_export_saved_as">Le chiavi da-utente-a-utente della stanza sono state salvate su \'%s\'.
 
 Attenzione: questo file può essere eliminato se l\'applicazione viene disinstallata.</string>
@@ -741,7 +741,7 @@ In futuro il processo di verifica sarà più sofisticato.</string>
     <string name="event_formatter_widget_added">%1$s aggiunto da %2$s</string>
     <string name="event_formatter_widget_removed">%1$s rimosso da %2$s</string>
     <string name="settings_labs_create_conference_with_jitsi">Crea una videoconferenza con jitsi</string>
-    <string name="widget_delete_message_confirmation">Sei sicuro di voler eliminare questo widget?</string>
+    <string name="widget_delete_message_confirmation">Sei sicuro di voler eliminare questo widget da questa stanza?</string>
 
     <!-- Widget Integration Manager -->
     <string name="widget_integration_unable_to_create">Impossibile creare il widget.</string>
@@ -915,14 +915,11 @@ In futuro il processo di verifica sarà più sofisticato.</string>
         <item quantity="other">%d cambi d\'appartenenza</item>
     </plurals>
 
-    <string name="settings_notification_privacy_warning">Riot.im funziona in sottofondo per mantenere privato il contenuto delle notifiche. Puoi cambiare questa opzione per ridurre il consumo della batteria.</string>
     <string name="settings_notification_privacy">Privacy delle notifiche</string>
     <string name="settings_notification_privacy_normal">Normale</string>
     <string name="settings_notification_privacy_power_saving">Opzioni risparmio energetico</string>
-    <string name="settings_notification_privacy_low_detail">Notifiche poco dettagliate</string>
     <string name="settings_notification_privacy_reduced">Privacy ridotta</string>
     <string name="settings_notification_privacy_need_permission">L\'app richiede il permesso per funzionare in sottofondo</string>
-    <string name="settings_notification_privacy_no_permission">Le app <b>non</b> richiedono il permesso per funzionare in sottofondo</string>
     <string name="settings_notification_privacy_fcm">• Le notifiche vengono inviate via Google Cloud Messaging</string>
     <string name="settings_notification_privacy_metadata">• Le notifiche contengono solo metadati</string>
     <string name="settings_notification_privacy_secure_message_content">• Il contenuto del messaggio di una notifica <b>si trova al sicuro direttamente dal server home di Matrix</b></string>
@@ -1084,8 +1081,8 @@ Tieni presente che questa azione riavvierà l\'app e potrebbe richiedere del tem
 
     <string name="room_sliding_menu_version_x">Versione %s</string>
     <string name="encryption_export_notice">Crea una passphrase (frase d\'ordine) per crittografare le chiavi esportate. Dovrai inserire la stessa passphrase per poter importare le chiavi.</string>
-    <string name="encryption_export_create_passphrase">Crea passphrase</string>
-    <string name="encryption_export_passphrase_dont_match">Le passphrase devono corrispondere</string>
+    <string name="passphrase_create_passphrase">Crea passphrase</string>
+    <string name="passphrase_passphrase_does_not_match">Le passphrase devono corrispondere</string>
     <string name="merged_events_expand">espandi</string>
     <string name="merged_events_collapse">collassa</string>
 
@@ -1254,4 +1251,9 @@ Per gli sviluppatori:
 
 Scopri una collaborazione davvero efficiente e aperta con Riot.im!</string>
 
+    <string name="video_call_in_progress">Videochiamata in corso…</string>
+
+    <string name="store_whats_new">Apportiamo continuamente cambiamenti e migliorie a Riot.im.
+Il registro completo delle modifiche si può trovare qui: %1$s.
+Per essere certo di non perdere nulla, mantieni gli aggiornamenti attivi.</string>
 </resources>

@@ -108,7 +108,7 @@
     <string name="send_bug_report_sent">Der Fehlerbericht wurde erfolgreich übermittelt</string>
     <string name="send_bug_report_failed">Der Fehlerbericht konnte nicht übermittelt werden (%s)</string>
     <string name="send_bug_report_progress">Fortschritt (%s%%)</string>
-    <string name="send_bug_report_app_crashed">Die Anwendung ist während der letzten Benutzung abgestürzt. Möchtest du eine Fehlermeldung übermitteln?</string>
+    <string name="send_bug_report_app_crashed">Die Anwendung ist während der letzten Benutzung abgestürzt. Möchtest du das Fehler-melden-Fenster öffnen?</string>
 
     <string name="send_files_in">Sende Datei nach</string>
     <string name="read_receipt">Gelesen</string>
@@ -238,7 +238,7 @@ Du wurdest auf allen Geräten abgemeldet und wirst keine Push-Benachrichtigungen
     <string name="incoming_call">Eingehender Anruf</string>
     <string name="incoming_video_call">Eingehender Video-Anruf</string>
     <string name="incoming_voice_call">Eingehender Sprachanruf</string>
-    <string name="call_in_progress">Anruf aktiv</string>
+    <string name="call_in_progress">Anruf aktiv…</string>
 
     <string name="call_error_user_not_responding">Die Gegenseite hat den Anruf nicht angenommen.</string>
     <string name="call_error_ice_failed">Medien-Verbindung fehlgeschlagen</string>
@@ -641,8 +641,8 @@ Verschlüsselte Nachrichten werden auf Matrix-Clients, auf denen die Verschlüss
     <string name="encryption_export_room_keys">Raumschlüssel exportieren</string>
     <string name="encryption_export_room_keys_summary">Schlüssel in lokale Datei exportieren</string>
     <string name="encryption_export_export">Exportieren</string>
-    <string name="encryption_import_enter_passphrase">Passphrase eingeben</string>
-    <string name="encryption_export_confirm_passphrase">Passphrase bestätigen</string>
+    <string name="passphrase_enter_passphrase">Passphrase eingeben</string>
+    <string name="passphrase_confirm_passphrase">Passphrase bestätigen</string>
     <string name="encryption_export_saved_as">Die Ende-zu-Ende-Raumschlüssel wurden in \'%s\' gespeichert.
 
 Achtung: Diese Datei wird vielleicht gelöscht, wenn die App deinstalliert wird.</string>
@@ -732,7 +732,7 @@ Unbekannte Geräte:</string>
     <string name="event_formatter_widget_added">%1$s hinzugefügt von %2$s</string>
     <string name="event_formatter_widget_removed">%1$s entfernt von %2$s</string>
     <string name="settings_labs_create_conference_with_jitsi">Konferenzgespräche mit jitsi durchführen</string>
-    <string name="widget_delete_message_confirmation">Soll das Widget wirklich gelöscht werden?</string>
+    <string name="widget_delete_message_confirmation">Soll das Widget wirklich aus diesem Raum gelöscht werden?</string>
 
     <!-- Widget Integration Manager -->
     <string name="widget_integration_unable_to_create">Widget konnte nicht erstellt werden.</string>
@@ -910,13 +910,10 @@ Unbekannte Geräte:</string>
     <string name="receipt_avatar">Lesebestätigungs-Profilbild</string>
     <string name="notice_avatar">Notiz-Avatar</string>
     <string name="settings_notification_privacy">Datenschutz für Benachrichtigungen</string>
-    <string name="settings_notification_privacy_warning">Riot.im läuft im Hintergrund um den Benachrichtigungsinhalt privat zu halten. Du kannst diese Option ändern um den Stromverbrauch zu reduzieren.</string>
     <string name="settings_notification_privacy_normal">Normal</string>
     <string name="settings_notification_privacy_power_saving">Energiesparoptionen</string>
-    <string name="settings_notification_privacy_low_detail">Informationsarme Benachrichtigung</string>
     <string name="settings_notification_privacy_reduced">Verringerter Datenschutz</string>
     <string name="settings_notification_privacy_need_permission">Dies App braucht die Berechtigung im Hintergrund zu laufen</string>
-    <string name="settings_notification_privacy_no_permission">Die App braucht die Berechtigung im Hintergrund zu laufen <b>nicht</b></string>
     <string name="settings_notification_privacy_fcm">• Benachrichtigungen werden über Google Cloud Messaging versendet</string>
     <string name="settings_notification_privacy_metadata">• Benachrichtigungen enthalten nur Metadaten</string>
     <string name="settings_notification_privacy_secure_message_content">• Der Nachrichteninhalt der Benachrichtigung wird <b>sicher vom Matrix-Heimserver abgerufen</b></string>
@@ -1077,8 +1074,8 @@ Beachte: Diese Aktion wird die App neu starten und einige Zeit brauchen.</string
     <string name="status_theme">Status.im-Thema</string>
 
     <string name="encryption_export_notice">Bitte eine Passphrase erstellen um exportierte Schlüssel zu verschlüsseln. Du musst dieselbe Passphrase eingeben um die Schlüssel importieren zu können.</string>
-    <string name="encryption_export_create_passphrase">Erzeuge Passphrase</string>
-    <string name="encryption_export_passphrase_dont_match">Passphrasen müssen übereinstimmen</string>
+    <string name="passphrase_create_passphrase">Erzeuge Passphrase</string>
+    <string name="passphrase_passphrase_does_not_match">Passphrasen müssen übereinstimmen</string>
     <string name="merged_events_expand">aufklappen</string>
     <string name="merged_events_collapse">Zusammenklappen</string>
 
@@ -1244,4 +1241,9 @@ Für Entwickler:
 
 Entdecke wahre Effizienz und offene Zusammenarbeit mit Riot.im!</string>
 
+    <string name="video_call_in_progress">Videogespräch aktiv…</string>
+
+    <string name="store_whats_new">Wir machen führen ständig Änderungen und Verbesserungen an Riot.im durch.
+Das komplette Änderungsprotokoll kann hier gefunden werden: %1$s
+Um sicherzustellen, dass du nichts verpasst, lass deine Updates einfach aktiviert.</string>
 </resources>

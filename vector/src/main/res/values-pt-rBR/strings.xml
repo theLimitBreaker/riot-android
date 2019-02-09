@@ -109,7 +109,7 @@ Exporte estas conversas para o backup antes de sair da Conta se quiser armazená
     <string name="send_bug_report_sent">O relatório de erro (bug) foi enviado com sucesso</string>
     <string name="send_bug_report_failed">O envio do relatório de erro (bug) falhou (%s)</string>
     <string name="send_bug_report_progress">Andamento (%s%%)</string>
-    <string name="send_bug_report_app_crashed">The application has crashed last time. Would you like to submit a crash report?</string>
+    <string name="send_bug_report_app_crashed">O aplicativo encerrou inesperadamente na última vez. Gostaria de abrir a tela de relatos de falhas?</string>
 
     <string name="send_files_in">Enviar para</string>
     <string name="read_receipt">Ler</string>
@@ -230,10 +230,10 @@ Exporte estas conversas para o backup antes de sair da Conta se quiser armazená
     <string name="call_connecting">Conectando chamada…</string>
     <string name="call_ended">Chamada terminada</string>
     <string name="call_ring">Chamando…</string>
-    <string name="incoming_call">Chamada recebida</string>
-    <string name="incoming_video_call">Chamada de vídeo recebida</string>
-    <string name="incoming_voice_call">Chamada de voz recebida</string>
-    <string name="call_in_progress">Chamada em andamento</string>
+    <string name="incoming_call">Recebendo chamada</string>
+    <string name="incoming_video_call">Recebendo chamada de vídeo</string>
+    <string name="incoming_voice_call">Recebendo chamada de voz</string>
+    <string name="call_in_progress">Chamada em andamento…</string>
 
     <string name="call_error_user_not_responding">A outra parte não conseguiu atender.</string>
     <string name="call_error_ice_failed">A conexão à mídia falhou</string>
@@ -629,8 +629,8 @@ Note que esta ação irá reiniciar o aplicativo e poderá tomar um certo tempo.
     <string name="encryption_export_room_keys">Exportar chaves de sala</string>
     <string name="encryption_export_room_keys_summary">Exportar as chaves para um arquivo local</string>
     <string name="encryption_export_export">Exportar</string>
-    <string name="encryption_import_enter_passphrase">Entre com a \'passphrase\'</string>
-    <string name="encryption_export_confirm_passphrase">Confirme a \'passphrase\'</string>
+    <string name="passphrase_enter_passphrase">Entre com a \'passphrase\'</string>
+    <string name="passphrase_confirm_passphrase">Confirme a \'passphrase\'</string>
     <string name="encryption_export_saved_as">As chaves de sala E2E foram salvas em \'%s\'
 
 Atenção: este arquivo poderá ser apagado se o aplicativo for desinstalado.</string>
@@ -771,7 +771,7 @@ Atenção: este arquivo poderá ser apagado se o aplicativo for desinstalado.</s
     <string name="event_formatter_widget_added">%1$s adicionada/o por %2$s</string>
     <string name="event_formatter_widget_removed">%1$s removida/o por %2$s</string>
     <string name="settings_labs_create_conference_with_jitsi">Criar chamadas de conferência com jitsi</string>
-    <string name="widget_delete_message_confirmation">Você tem certeza que quer apagar este widget?</string>
+    <string name="widget_delete_message_confirmation">Você tem certeza que quer apagar este widget desta sala?</string>
 
     <!-- Widget Integration Manager -->
     <string name="widget_integration_unable_to_create">Impossível criar o widget.</string>
@@ -891,10 +891,8 @@ Atenção: este arquivo poderá ser apagado se o aplicativo for desinstalado.</s
 
     <string name="settings_notification_privacy_normal">Normal</string>
     <string name="settings_notification_privacy_power_saving">Opções de economia de energia</string>
-    <string name="settings_notification_privacy_low_detail">Notificações de baixo detalhe</string>
     <string name="settings_notification_privacy_reduced">Privacidade reduzida</string>
     <string name="settings_notification_privacy_need_permission">O app necessita de permissão para rodar em segundo plano</string>
-    <string name="settings_notification_privacy_no_permission">Os aplicativos <b>não</b> precisam de permissão para rodar em segundo plano</string>
     <string name="title_activity_choose_sticker">Enviar um sticker</string>
 
     <string name="dialog_title_third_party_licences">Licenças de terceiros</string>
@@ -957,7 +955,6 @@ Note que esta ação vai reiniciar o aplicativo e isso pode tomar um certo tempo
         <item quantity="other">%d selecionados</item>
     </plurals>
     <string name="settings_notification_privacy">Privacidade das notificações</string>
-    <string name="settings_notification_privacy_warning">Riot.im funciona em segundo plano para manter sua mensagem de notificação privada. Você pode alterar esta opção para reduzir o uso da bateria.</string>
     <string name="settings_notification_privacy_fcm">• As notificações são enviadas pelo \"Google Cloud Messaging\"</string>
     <string name="settings_notification_privacy_metadata">• As notificações contém apenas metadados</string>
     <string name="settings_notification_privacy_secure_message_content">• O conteúdo das mensagens da notificação é <b>armazenado de forma segura diretamente no servidor Matrix</b></string>
@@ -1190,8 +1187,8 @@ Trabalhos que o aplicativo tentar fazer serão restringidos agressivamente enqua
     <string name="store_title">Riot.im - colaboração aberta em equipe</string>
     <string name="store_short_description">Bem-vindo ao Riot.im: um novo mundo de comunicação aberta!</string>
     <string name="settings_troubleshoot_test_battery_failed">"Se um usuário deixar um dispositivo desconectado e parado por um período de tempo, com a tela desligada, o dispositivo entrará no modo Cochilo. Isso impede que os aplicativos acessem a rede e adiem seus trabalhos, sincronizações e alarmes padrão. "</string>
-    <string name="encryption_export_create_passphrase">Criar passphrase</string>
-    <string name="encryption_export_passphrase_dont_match">Passphrases devem corresponder</string>
+    <string name="passphrase_create_passphrase">Criar passphrase</string>
+    <string name="passphrase_passphrase_does_not_match">Passphrases devem corresponder</string>
     <string name="settings_lazy_loading_title">Carregamento Lazy dos membros das salas</string>
     <string name="store_full_description">O Riot.im é um ambiente de colaboração simples e elegante que reúne todas as suas diferentes conversas e integrações de aplicativos em um único aplicativo.
 
@@ -1224,4 +1221,9 @@ Para desenvolvedores:
 
 Descubra uma colaboração verdadeiramente eficiente e aberta com o Riot.im!</string>
 
+    <string name="video_call_in_progress">Chamada de Vídeo em andamento…</string>
+
+    <string name="store_whats_new">Estamos sempre fazendo alterações e melhorias no Riot.im.
+O changelog completo pode ser encontrado aqui: %1$s.
+Para garantir que você não perca nada, mantenha suas atualizações ativadas.</string>
 </resources>

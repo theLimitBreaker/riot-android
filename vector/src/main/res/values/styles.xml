@@ -25,7 +25,7 @@
 
     <style name="Vector.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">?attr/vctr_primary_text_color</item>
+        <item name="android:textColor">?attr/vctr_toolbar_primary_text_color</item>
         <item name="android:fontFamily">"sans-serif-medium"</item>
     </style>
 
@@ -63,14 +63,14 @@
 
     <!-- main text -->
     <style name="ActionBarTitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">?attr/vctr_primary_text_color</item>
+        <item name="android:textColor">?attr/vctr_toolbar_primary_text_color</item>
         <item name="android:fontFamily">"sans-serif-medium"</item>
         <item name="android:textSize">20sp</item>
     </style>
 
     <!-- sub text -->
     <style name="ActionBarSubTitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
-        <item name="android:textColor">?attr/vctr_primary_text_color</item>
+        <item name="android:textColor">?attr/vctr_toolbar_primary_text_color</item>
         <item name="android:fontFamily">"sans-serif-medium"</item>
         <item name="android:textSize">12sp</item>
     </style>
@@ -85,16 +85,23 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="LoginButtonStyleBase" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:layout_marginRight">16dp</item>
+    <!-- Styles for button -->
+    <style name="VectorButtonStyle" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingRight">8dp</item>
         <item name="android:minWidth">94dp</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:background">?colorAccent</item>
+        <item name="android:textColor">@color/button_text_color_selector</item>
+    </style>
+
+    <style name="LoginButtonStyleBase" parent="VectorButtonStyle">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_height">36dp</item>
     </style>
 
     <style name="LoginButtonStyle" parent="LoginButtonStyleBase" />

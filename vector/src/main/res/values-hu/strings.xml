@@ -95,7 +95,7 @@ A kulcsok mentéséhez kijelentkezés előtt válaszd az exportálás opciót.</
     <string name="send_bug_report_placeholder">Írd le itt a problémádat</string>
     <string name="send_bug_report_logs_description">A problémák kielemzése érdekében a naplók erről a kliensről a hibabejelentővel elküldésre kerülnek. Ha inkább csak a fenti szöveget szeretnéd elküldeni, szedd ki a pipát:</string>
     <string name="send_bug_report_alert_message">Úgy tűnik, mintha mérgedben ráznád a telefont. Szeretnél hibajelentést beküldeni?</string>
-    <string name="send_bug_report_app_crashed">Az alkalmazás legutóbb összeomlott. Szeretnél hibajelentést beküldeni?</string>
+    <string name="send_bug_report_app_crashed">Az alkalmazás legutóbb összeomlott. Megnyitod a hibabejelentő képernyőt?</string>
 
     <string name="send_bug_report_sent">A hibajelentés sikeresen elküldve</string>
     <string name="send_bug_report_failed">A hibajelentést nem sikerült elküldeni (%s)</string>
@@ -222,7 +222,7 @@ Elnézést a kellemetlenségért.</string>
     <string name="incoming_call">Bejövő hívás</string>
     <string name="incoming_video_call">Bejövő videóhívás</string>
     <string name="incoming_voice_call">Bejövő hanghívás</string>
-    <string name="call_in_progress">Hívás folyamatban</string>
+    <string name="call_in_progress">Hívás folyamatban…</string>
 
     <string name="call_error_user_not_responding">A hívott fél nem vette fel.</string>
     <string name="call_error_ice_failed">A médiacsatlakozás nem sikerült</string>
@@ -595,8 +595,8 @@ A titkosított üzenetek nem fognak látszódni azokon a klienseken ahol a titko
     <string name="encryption_export_room_keys">Szoba kulcsok exportálása</string>
     <string name="encryption_export_room_keys_summary">Exportáld a kulcsokat helyi fájlba</string>
     <string name="encryption_export_export">Exportálás</string>
-    <string name="encryption_import_enter_passphrase">Írj be jelmondatot</string>
-    <string name="encryption_export_confirm_passphrase">Ellenőrizd a jelmondatot</string>
+    <string name="passphrase_enter_passphrase">Írj be jelmondatot</string>
+    <string name="passphrase_confirm_passphrase">Ellenőrizd a jelmondatot</string>
     <string name="encryption_export_saved_as">A E2E szoba kulcsok el lettek mentve ide \'%s\'
 
 Figyelmeztetés: ez a fájl törlésre kerülhet, ha az alkalmazást törli.</string>
@@ -694,7 +694,7 @@ Ismeretlen eszközök:</string>
     <string name="event_formatter_widget_added">%1$s hozzá lett adva %2$s által</string>
     <string name="event_formatter_widget_removed">%1$s eltávolításra került %2$s által</string>
     <string name="settings_labs_create_conference_with_jitsi">Hozz létre konferencia hívást a jitsi segítségével</string>
-    <string name="widget_delete_message_confirmation">Biztos vagy benne hogy törölni akarod ezt a kisalkalmazást?</string>
+    <string name="widget_delete_message_confirmation">Biztos vagy benne hogy törölni akarod ezt a kisalkalmazást ebből a szobából?</string>
 
     <!-- Widget Integration Manager -->
     <string name="widget_integration_unable_to_create">Kisalkalmazás létrehozása sikertelen.</string>
@@ -865,11 +865,8 @@ Ismeretlen eszközök:</string>
 
     <string name="receipt_avatar">Visszaigazolási avatar</string>
     <string name="notice_avatar">Észlelés avatar</string>
-    <string name="settings_notification_privacy_warning">Riot.im a háttérben fut azért, hogy az értesítések tartalma titokban maradhasson. Ezt a beállítást megváltoztathatod kisebb akkumulátor használathoz.</string>
     <string name="settings_notification_privacy_normal">Normál</string>
     <string name="settings_notification_privacy_power_saving">Akkumulátor kímélő beállítások</string>
-    <string name="settings_notification_privacy_low_detail">Értesítések kevés részlettel</string>
-    <string name="settings_notification_privacy_no_permission">Az alkalmazásnak <b>nincs</b> szüksége engedélyre a háttérben való futáshoz</string>
     <string name="settings_notification_privacy_fcm">• Az értesítések a Google Cloud Messaging rendszeren keresztül lesznek elküldve</string>
     <string name="settings_notification_privacy_metadata">• Az értesítések csak metaadatokat tartalmaznak</string>
     <string name="settings_notification_privacy_secure_message_content">• Az értesítés tartalma <b>közvetlenül a Matrix szerverről kerül letöltésre</b></string>
@@ -1033,8 +1030,8 @@ Vedd figyelembe, hogy az alkalmazás újraindul ami sok időt vehet igénybe.</s
 
     <string name="room_sliding_menu_version_x">Verzió: %s</string>
     <string name="encryption_export_notice">Adj meg egy jelmondatot a kimentett kulcsok titkosításához. Ezt a jelmondatot kell majd megadnod a kulcsok betöltéséhez.</string>
-    <string name="encryption_export_create_passphrase">Jelmondat lekészítése</string>
-    <string name="encryption_export_passphrase_dont_match">A jelmondatoknak meg kell egyezniük</string>
+    <string name="passphrase_create_passphrase">Jelmondat lekészítése</string>
+    <string name="passphrase_passphrase_does_not_match">A jelmondatoknak meg kell egyezniük</string>
     <string name="merged_events_expand">kinyit</string>
     <string name="merged_events_collapse">bezár</string>
 
@@ -1202,4 +1199,9 @@ Fejlesztőknek:
 
 Fedezd fel az igazán hatásos és nyílt együttműködés lehetőségét a Riot.im-mel!"</string>
 
+    <string name="video_call_in_progress">Videóhívás folyamatban…</string>
+
+    <string name="store_whats_new">Folyamatosan változtatjuk és javítjuk a Riot.im-et.
+A változások teljes listája itt található: %1$s.
+Nehogy lemaradj bármiről, ezért továbbra is engedélyezd a frissítéseket.</string>
 </resources>
