@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo replace step 1
 sed -i '' -e "s/^\/\/include ':matrix-sdk'/include ':matrix-sdk'/" settings.gradle || true
 sed -i '' -e "s/^\/\/project(':matrix-sdk')/project(':matrix-sdk')/" settings.gradle || true
