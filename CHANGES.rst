@@ -9,12 +9,26 @@ Features:
 
 Improvements:
  - Improve UX when restoring e2e keys (#2999)
+ - Add option to send messages with enter button (#1070)
+ - MediaViewer: display image in high quality and improve max zoom for big file (#2967)
+ - Hide e2e keys management section in settings if crypto is disabled
+ - Display message with formatted_body but with empty body (#2989)
+ - Get full Credentials data from Fallback login (#3006)
 
 Other changes:
- -
+ - Change color of links (#2987)
+ - Change color of HomeSection badge (#2987)
 
 Bugfix:
- -
+ - Fix crash in settings when cryptography is disabled (#2991)
+ - Fix Claims of display names being linkified #2975
+ - Fix Riot breaks links if message contains numbers #2891
+ - Fix geo: URIs are treated as phone numbers #2464
+ - Fix Some text in messages are converted to maps link and should not #2350
+ - Fix Numbers are too much linkified #1140
+ - Fix Highlight geo: URIs #1329
+ - Fix Odd linkification bug with trailing slash #865
+ - Fix issue on joining conference call wording in some languages (#2112)
 
 Translations:
  -
@@ -79,6 +93,7 @@ Other changes:
  - New application icon! (#2905)
 
 Bugfix:
+ - Fix No Visual Difference is setting if disabled (#2929)
  - Fix crash when taking picture for user avatar on old device (#2818)
  - Fix crash when adding background to image (#2828)
  - LED notifications are not working (#2512)
